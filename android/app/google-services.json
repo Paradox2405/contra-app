@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "574745841695",
+    "project_id": "contra-761dc",
+    "storage_bucket": "contra-761dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574745841695:android:5dfa382748d81f2161c52a",
+        "android_client_info": {
+          "package_name": "com.application.contra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574745841695-5p4r9v388n5ok1qlaje0bud8alcsao7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvXHxY9Mv_t4qa2KEkkeYSI_tgkm_64qA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574745841695-5p4r9v388n5ok1qlaje0bud8alcsao7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
