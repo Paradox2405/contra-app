@@ -23,8 +23,7 @@ class WelcomePage extends GetView<WelcomePageController>{
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 ElevatedButton(
@@ -34,8 +33,19 @@ class WelcomePage extends GetView<WelcomePageController>{
                     onPressed: () {
                      Get.offAndToNamed(Routes.login);
                     },
-                    child: Text("Start")),
-              ])
+                    child: Text("Find Contractor")),
+              ],),
+              SizedBox(height: 20,),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,minimumSize: Size(180, 60),shape: StadiumBorder(),
+                    ),
+                    onPressed: () {
+                      Get.offAndToNamed(Routes.login);
+                    },
+                    child: Text("Find Work")),
+              ],),
             ],
           )
         ],
