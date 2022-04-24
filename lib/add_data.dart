@@ -1,6 +1,8 @@
 import 'package:contra/tools/tools.dart';
 
+import 'models/engineer_model.dart';
 import 'models/marker_model.dart';
+import 'models/worker_model.dart';
 
 void dataModelPopulate(){
 
@@ -27,7 +29,7 @@ void dataModelPopulate(){
       "https://wedabima.com/storage/special_contractors/logos/wedabima.com_wedabima.com_gg_15506379211618031525.jpg"));
 
   Tools.markersList.add(MarkersModel(
-      3,
+      4,
       "KN Construction",
       "KN Construction provides your all engineering construction requirements with qualified architectures ,engineers ,surveyors, quantity surveyors, technical officers in fast and genuinely with including all materials according to engineering specification in all around the Sri Lanka. Also provides lanscaping work, ceiling work, i panels, electrical work, granite designs, granite wall designs, 3D home designs and etc. ",
       "36.7456",
@@ -35,12 +37,46 @@ void dataModelPopulate(){
       "https://wedabima.com/storage/special_contractors/logos/wedabima.com_wedabima.com_120300465_175186857559351_1110482690006835175_n16148282961621236382.jpg"));
 
   Tools.markersList.add(MarkersModel(
-      3,
+      5,
       "Finex Engineering Private Ltd",
       "FINEX Engineering have been serving the construction industry for the last 3 decades under the brand name Finco Engineering; the pioneers in construction chemicals & engineering solutions. In celebration of the 35th anniversary, we accelerated our business focus with the intention of bringing the FINEST INNOVATION & EXPERTISE; therefore we will serve under our new signature ; FINEX Engineering.",
       "36.7456",
       "3.0698",
       "https://wedabima.com/storage/special_contractors/logos/wedabima.com_logo14_(1)_1545302824.jpg"));
 
+  ////////////////////////////////////////////////////////////////
+  Tools.workersList.add(WorkerModel(
+      1,
+      "Backhoe Operator",
+      "Has to operate backhoe within a site",
+      ));
+  Tools.workersList.add(WorkerModel(
+    2,
+    "General Worker",
+    "Has to support main instructor",
+  ));
 
+  Tools.workersList.add(WorkerModel(
+    3,
+    "Welder",
+    "Has to weld iron",
+  ));
+
+
+  //////////////////////////////////////////
+  Tools.engineersList.add(EngineerModel(
+    1,
+    "Piling Engineer",
+    "Has to supervise piling",
+  ));
+  Tools.engineersList.add(EngineerModel(
+    1,
+    "Architecture Engineer",
+    "Has to design architecture",
+  ));
+  Tools.engineersList.add(EngineerModel(
+    1,
+    "Structural Engineer",
+    "Keep track of structural integrity",
+  ));
 }

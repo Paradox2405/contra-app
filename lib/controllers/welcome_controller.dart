@@ -26,8 +26,7 @@ class WelcomePageController extends GetxController {
   
   redirect() async{
     if (await FirebaseAuth.instance.currentUser?.uid != null) {
-     Get.toNamed(Routes.home);
-     Get.forceAppUpdate();
+     Get.toNamed(Routes.joblisting);
     }
   }
 }
