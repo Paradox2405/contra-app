@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../routes/routes.dart';
 
-class PaymentSuccess extends StatefulWidget {
 
+class PaymentSuccess extends StatefulWidget {
+  const PaymentSuccess({Key key}) : super(key: key);
 
   @override
   State<PaymentSuccess> createState() => _PaymentSuccessState();
@@ -72,7 +72,6 @@ class _PaymentSuccessState extends State<PaymentSuccess> {
             ElevatedButton(
               onPressed: () =>
               {
-                //  Get.offAndToNamed(Routes.submitted),
                 Get.offAndToNamed(Routes.welcome),
               },
               style: ButtonStyle(

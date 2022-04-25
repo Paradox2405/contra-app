@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import '../routes/routes.dart';
 import '../tools/tools.dart';
 
 //********* Global Variables */
@@ -156,82 +158,87 @@ class _MainScreenState extends State<ConstructionMapPage> {
                             itemBuilder: (_, i) {
                               return Transform.scale(
                                 scale: i == _index ? 1 : 0.9,
-                                child: new Container(
-                                  height: 116.00,
-                                  width: 325.00,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffffffff),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        offset: Offset(0.5, 0.5),
-                                        color:
-                                        Color(0xff000000).withOpacity(0.12),
-                                        blurRadius: 20,
-                                      ),
-                                    ],
-                                    borderRadius: BorderRadius.circular(10.00),
-                                  ),
-                                  child: Row(
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 9, top: 7, bottom: 7, right: 9),
-                                        child: Container(
-                                          height: 86.00,
-                                          width: 86.00,
-                                          decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                              fit: BoxFit.fill,
-                                              image: NetworkImage(
-                                                  Tools.markersList[i].image),
+                                child:  InkWell(
+                                  onTap: ()=>{
+                                    Get.toNamed(Routes.info),
+                                  },
+                                  child: Container(
+                                    height: 116.00,
+                                    width: 325.00,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffffffff),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          offset: Offset(0.5, 0.5),
+                                          color:
+                                          Color(0xff000000).withOpacity(0.12),
+                                          blurRadius: 20,
+                                        ),
+                                      ],
+                                      borderRadius: BorderRadius.circular(10.00),
+                                    ),
+                                    child: Row(
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 9, top: 7, bottom: 7, right: 9),
+                                          child: Container(
+                                            height: 86.00,
+                                            width: 86.00,
+                                            decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                fit: BoxFit.fill,
+                                                image: NetworkImage(
+                                                    Tools.markersList[i].image),
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(5.00),
                                             ),
-                                            borderRadius:
-                                            BorderRadius.circular(5.00),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 12, right: 0.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: <Widget>[
-                                            Wrap(
-                                              alignment: WrapAlignment.start,
-                                              spacing: 2,
-                                              direction: Axis.vertical,
-                                              children: <Widget>[
-                                                Text(
-                                                  Tools.markersList[i].name,
-                                                  style: TextStyle(
-                                                    fontFamily: "Montserrat",
-                                                    fontSize: 15,
-                                                    color: Color(0xff000000),
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 230,
-                                                  child: Text(
-                                                    Tools.markersList[i]
-                                                        .description,
-                                                    overflow:
-                                                    TextOverflow.ellipsis,
-                                                    maxLines: 4,
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 12, right: 0.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: <Widget>[
+                                              Wrap(
+                                                alignment: WrapAlignment.start,
+                                                spacing: 2,
+                                                direction: Axis.vertical,
+                                                children: <Widget>[
+                                                  Text(
+                                                    Tools.markersList[i].name,
                                                     style: TextStyle(
                                                       fontFamily: "Montserrat",
-                                                      fontSize: 10,
+                                                      fontSize: 15,
                                                       color: Color(0xff000000),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
+                                                  Container(
+                                                    width: 230,
+                                                    child: Text(
+                                                      Tools.markersList[i]
+                                                          .description,
+                                                      overflow:
+                                                      TextOverflow.ellipsis,
+                                                      maxLines: 4,
+                                                      style: TextStyle(
+                                                        fontFamily: "Montserrat",
+                                                        fontSize: 10,
+                                                        color: Color(0xff000000),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              )
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );

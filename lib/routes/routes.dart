@@ -1,12 +1,15 @@
 
 import 'package:contra/controllers/welcome_binding.dart';
 import 'package:contra/screens/construction_map_page.dart';
+import 'package:contra/screens/constructorInfoPage.dart';
 import 'package:contra/screens/enter_worker_detail_page.dart';
 import 'package:contra/screens/job_listing_page.dart';
 import 'package:contra/screens/payment_success.dart';
 import 'package:contra/screens/submit_successful_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+import '../controllers/constructor_info_binding.dart';
 import '../controllers/joblisting_binding.dart';
+import '../screens/chat_screen.dart';
 import '../screens/credit_card_page.dart';
 import '../screens/welcome_page.dart';
 
@@ -19,6 +22,9 @@ class Routes{
   static final String card = "/credit_card_page";
   static final String success = "/credit_card_page";
   static final String paid = "/payment_success_page";
+  static final String info = "/constructionInfoPage";
+  static final String chat = "/chat_screen";
+
 
 
 
@@ -53,6 +59,15 @@ class Routes{
     GetPage(
       name: Routes.paid,
       page: ()=> PaymentSuccess(),
+    ),
+    GetPage(
+      name: Routes.info,
+      page: ()=> ConstructorInfoPage(),
+      binding: ConstructorInfoBinding(),
+    ),
+    GetPage(
+      name: Routes.chat,
+      page: ()=> ChatScreen(),
     ),
   ];
 }

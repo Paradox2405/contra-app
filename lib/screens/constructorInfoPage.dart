@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/constructor_info_controller.dart';
+import '../routes/routes.dart';
 
 
 class ConstructorInfoPage extends GetView<ConstructorInfoController>{
@@ -77,6 +78,8 @@ class ConstructorInfoPage extends GetView<ConstructorInfoController>{
     );
   }
 
-  void buttonPressed() {}
+  void buttonPressed() {
+    Get.toNamed(Routes.chat);
+  }
 }
 
