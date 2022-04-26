@@ -150,7 +150,7 @@ class JobListingPage extends GetView<JobListingController> {
                                 ),
                               ),
                                 onTap: ()=>{
-                                 // Get.toNamed(Routes.engineerdetail),
+                                  Get.toNamed(Routes.engineerdetail),
                                 },
                               );
                             }),

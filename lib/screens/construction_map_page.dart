@@ -4,17 +4,16 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../routes/routes.dart';
 import '../tools/tools.dart';
 
 //********* Global Variables */
 
-const LatLng _center = const LatLng(36.737232, 3.086472);
+const LatLng _center = const LatLng(6.9271, 79.8612);
 LatLng newPosition;
 CameraPosition newCameraPosition =
-CameraPosition(target: LatLng(36.6993, 3.1755), zoom: 10);
+CameraPosition(target: LatLng(6.927, 79.861), zoom: 10);
 
 Set<Marker> markers = {};
 int _index = 0;
@@ -160,7 +159,7 @@ class _MainScreenState extends State<ConstructionMapPage> {
                                 scale: i == _index ? 1 : 0.9,
                                 child:  InkWell(
                                   onTap: ()=>{
-                                    Get.toNamed(Routes.info),
+                                    Get.toNamed(Routes.info,arguments: [Tools.markersList[i]]),
                                   },
                                   child: Container(
                                     height: 116.00,

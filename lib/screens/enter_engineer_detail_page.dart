@@ -1,18 +1,20 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../routes/routes.dart';
 
 
-class EnterWorkerDetailPage extends StatelessWidget {
-  const EnterWorkerDetailPage({Key key}) : super(key: key);
-
+class EnterEngineerDetailPage extends StatelessWidget {
+  const EnterEngineerDetailPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Apply As Worker'),
+        title: Text('Apply As Engineer'),
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
@@ -187,7 +189,36 @@ class EnterWorkerDetailPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                  Text("Payment: 1500/=",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blueGrey)),
+                    SizedBox(
+                      width: 150,
+                      child: ElevatedButton(
+                        onPressed: () async =>{
+                          pickFile(),
+                        },
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.blueGrey)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.attach_file, color: Colors.white),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Attach CV",
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                  Text("Payment: 3000/=",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blueGrey)),
                     SizedBox(height: 10,),
                     ElevatedButton(
                       onPressed: () =>
@@ -214,6 +245,20 @@ class EnterWorkerDetailPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  pickFile() async {
+
+    FilePickerResult result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: [ 'pdf'],
+    );
+    if(result != null) {
+    File file = File(result.files.single.path);
+    print(file.path);
+    } else {
+    Get.snackbar("Error", "Select a PDF",backgroundColor: Colors.white);
+    }
   }
 }
 
