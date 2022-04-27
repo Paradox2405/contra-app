@@ -3,6 +3,7 @@ import 'package:contra/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'controllers/welcome_binding.dart';
 
 void main() async {
@@ -14,6 +15,21 @@ dataModelPopulate();
 }
 Future<void> initServices() async{
   await Firebase.initializeApp();
+  try {
+    /// Checks if shared preference exist
+    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await _prefs;
+    prefs.getString("app-name");
+    await prefs.setInt('indexVal', 0);
+  } catch (err) {
+    /// setMockInitialValues initiates shared preference
+    /// Adds app-name
+    SharedPreferences.setMockInitialValues({});
+    Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+    final SharedPreferences prefs = await _prefs;
+    prefs.setString("app-name", "my-app");
+    await prefs.setInt('indexVal', 0);
+  }
 
 
 }

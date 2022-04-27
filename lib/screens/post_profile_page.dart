@@ -2,7 +2,6 @@ import 'package:contra/controllers/post_profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../routes/routes.dart';
 
 class PostProfilePage extends GetView<PostProfileController> {
   PostProfilePage({Key key}) : super(key: key);
@@ -93,7 +92,7 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontSize: 20),
                                     hintText: 'NIC',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.nic,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -114,9 +113,8 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontWeight: FontWeight.bold,
                                         color: Color.fromRGBO(82, 82, 82, 1),
                                         fontSize: 20),
-                                    hintText: 'First Name',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.name,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -139,9 +137,9 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontWeight: FontWeight.bold,
                                         color: Color.fromRGBO(82, 82, 82, 1),
                                         fontSize: 20),
-                                    hintText: 'Contact Number',
+                                    hintText: 'EX: 076 234 5231',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.number,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -165,7 +163,7 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontSize: 20),
                                     hintText: 'Specialization and skills',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.skills,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -189,7 +187,7 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontSize: 20),
                                     hintText: 'Previous Work Experience',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.exp,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -211,9 +209,9 @@ class PostProfilePage extends GetView<PostProfileController> {
                                         fontWeight: FontWeight.bold,
                                         color: Color.fromRGBO(82, 82, 82, 1),
                                         fontSize: 20),
-                                    hintText: 'EX: 4000/=LKR Per Day',
+                                    hintText: 'EX: 4000/= LKR Per Day',
                                   ),
-                                  //controller: controller.lname,
+                                  controller: controller.rate,
                                   textInputAction: TextInputAction.next,
                                 ),
                               ),
@@ -224,7 +222,7 @@ class PostProfilePage extends GetView<PostProfileController> {
                           ),
                           ElevatedButton(
                             onPressed: () => {
-                              Get.offAndToNamed(Routes.submitted),
+                              controller.checkData(),
                             },
                             style: ButtonStyle(
                                 backgroundColor:

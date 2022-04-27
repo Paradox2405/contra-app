@@ -2,12 +2,14 @@
 import 'package:contra/controllers/welcome_binding.dart';
 import 'package:contra/screens/construction_map_page.dart';
 import 'package:contra/screens/constructor_info_page.dart';
+import 'package:contra/screens/hire_personnel_page.dart';
 import 'package:contra/screens/job_listing_page.dart';
 import 'package:contra/screens/payment_success.dart';
 import 'package:contra/screens/post_profile_page.dart';
 import 'package:contra/screens/submit_successful_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../controllers/constructor_info_binding.dart';
+import '../controllers/hire_personnel_binding.dart';
 import '../controllers/joblisting_binding.dart';
 import '../controllers/post_profile_binding.dart';
 import '../screens/chat_screen.dart';
@@ -29,6 +31,7 @@ class Routes{
   static final String info = "/constructionInfoPage";
   static final String chat = "/chat_screen";
   static final String postP = "/post_profile_page";
+  static final String hire = "/hire_personnel_page";
 
 
 
@@ -84,6 +87,11 @@ class Routes{
       name: Routes.postP,
       page: ()=> PostProfilePage(),
       binding:PostProfileBinding(),
+    ),
+    GetPage(
+      name: Routes.hire,
+      page: ()=> HirePersonnelPage(),
+      binding:HirePersonnelBinding(),
     ),
   ];
 }

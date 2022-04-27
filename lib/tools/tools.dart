@@ -10,5 +10,4 @@ class Tools {
   static List<MarkersModel> markersList = [];
   static List<EngineerModel> engineersList = [];
   static List<WorkerModel> workersList = [];
-
 }

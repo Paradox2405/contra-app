@@ -5,7 +5,14 @@ import '../routes/routes.dart';
 
 
 class EnterWorkerDetailPage extends StatelessWidget {
-  const EnterWorkerDetailPage({Key key}) : super(key: key);
+  EnterWorkerDetailPage({Key key}) : super(key: key);
+  final nic=TextEditingController();
+  final fname=TextEditingController();
+  final lname=TextEditingController();
+  final age=TextEditingController();
+  final number=TextEditingController();
+  final exp=TextEditingController();
+
 
 
   @override
@@ -29,11 +36,11 @@ class EnterWorkerDetailPage extends StatelessWidget {
                     color: Color.fromRGBO(255, 255, 255, 0.7)),
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Row(
                         children: <Widget>[
                           Expanded(
                             child: TextField(
@@ -50,15 +57,13 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'NIC',
                               ),
-                              //controller: controller.lname,
+                              controller: nic,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
+                      ),    SizedBox(height: 20,),
+                      Row(
                         children: <Widget>[
                           Expanded(
                             child: TextField(
@@ -75,15 +80,13 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'First Name',
                               ),
-                              //controller: controller.lname,
+                              controller: fname,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
+                      ),    SizedBox(height: 20,),
+                      Row(
                         children: <Widget>[
                           Expanded(
                             child: TextField(
@@ -100,15 +103,13 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'Last Name',
                               ),
-                              //controller: controller.lname,
+                              controller: lname,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
+                      ),    SizedBox(height: 20,),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Expanded(
@@ -127,15 +128,13 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'Age',
                               ),
-                              //controller: controller.lname,
+                              controller:age,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
+                      ),    SizedBox(height: 20,),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Expanded(
@@ -154,15 +153,13 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'Contact Number',
                               ),
-                              //controller: controller.lname,
+                              controller: number,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Row(
+                      ),    SizedBox(height: 20,),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Expanded(
@@ -180,33 +177,32 @@ class EnterWorkerDetailPage extends StatelessWidget {
                                     fontSize: 20),
                                 hintText: 'Previous Work Experience',
                               ),
-                              //controller: controller.lname,
+                              controller: exp,
                               textInputAction: TextInputAction.next,
                             ),
                           ),
                         ],
+                      ),    SizedBox(height: 20,),
+                    Text("Payment: 1500/=",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blueGrey)),
+                      SizedBox(height: 10,),
+                      ElevatedButton(
+                        onPressed: () =>
+                        {
+                         checkData(),
+                        },
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.blueGrey)),
+                        child: Text(
+                          "PROCEED TO PAYMENT",
+                          style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                  Text("Payment: 1500/=",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blueGrey)),
-                    SizedBox(height: 10,),
-                    ElevatedButton(
-                      onPressed: () =>
-                      {
-                        //  Get.offAndToNamed(Routes.submitted),
-                      Get.toNamed(Routes.card)
-                      },
-                      style: ButtonStyle(
-                          backgroundColor:
-                          MaterialStateProperty.all(Colors.blueGrey)),
-                      child: Text(
-                        "PROCEED TO PAYMENT",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -214,6 +210,10 @@ class EnterWorkerDetailPage extends StatelessWidget {
         ),
       ),
     );
+  }
+  checkData(){
+nic.text==""||fname.text==""||lname.text==""||age.text==""||number.text==""||exp.text=="" ? Get.snackbar("Error", "Please fill all fields with proper data",backgroundColor: Colors.redAccent)
+    : Get.offAndToNamed(Routes.card);
   }
 }
 

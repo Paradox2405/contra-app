@@ -90,8 +90,7 @@ class WelcomePage extends StatelessWidget {
                                   shape: StadiumBorder(),
                                 ),
                                 onPressed: () {
-                                  // Get.toNamed(Routes.joblisting,
-                                  //     arguments: ["worker"]);
+                                  Get.toNamed(Routes.hire);
                                 },
                                 child: Text(
                                   "Hire Personnel",
