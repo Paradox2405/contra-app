@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.application.contra">
    <application
-        android:label="contra"
+        android:label="Constructions-Contracting"
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyB0e9705Yn35Br4PWUn0OfUNW89DAw7F-U"/>
         <activity

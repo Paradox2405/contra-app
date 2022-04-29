@@ -32,8 +32,9 @@ class WelcomePage extends StatelessWidget {
                         color: Color.fromRGBO(255, 255, 255, 0.4),
                         child: Column(
                           children: [
-                            Text("CONTRA",style: TextStyle(color: Colors.blueGrey,fontSize: 65,fontWeight: FontWeight.w900)),
-                            Text("For All Your Construction Needs",style: TextStyle(color: Colors.blueGrey,fontSize: 15,fontWeight: FontWeight.w900)),
+                            Image.asset("assets/logo.png"),
+                            //Text("CONSTRUCTIONS\nCONTRACTING",textAlign: TextAlign.center,style: TextStyle(color: Colors.blueGrey,fontSize: 35,fontWeight: FontWeight.w900)),
+                            //Text("For All Your Construction Needs",style: TextStyle(color: Colors.blueGrey,fontSize: 15,fontWeight: FontWeight.w900)),
                           ],
                         ),
                       ),
