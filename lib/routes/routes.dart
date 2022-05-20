@@ -1,21 +1,28 @@
 
+import 'package:contra/controllers/login_bindings.dart';
 import 'package:contra/controllers/welcome_binding.dart';
 import 'package:contra/screens/construction_map_page.dart';
 import 'package:contra/screens/constructor_info_page.dart';
+import 'package:contra/screens/feedback_page.dart';
 import 'package:contra/screens/hire_personnel_page.dart';
 import 'package:contra/screens/job_listing_page.dart';
 import 'package:contra/screens/payment_success.dart';
 import 'package:contra/screens/post_profile_page.dart';
+import 'package:contra/screens/registration_page.dart';
 import 'package:contra/screens/submit_successful_page.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../controllers/constructor_info_binding.dart';
 import '../controllers/hire_personnel_binding.dart';
 import '../controllers/joblisting_binding.dart';
 import '../controllers/post_profile_binding.dart';
+import '../controllers/registration_bindings.dart';
 import '../screens/chat_screen.dart';
 import '../screens/credit_card_page.dart';
 import '../screens/enter_engineer_detail_page.dart';
 import '../screens/enter_worker_detail_page.dart';
+import '../screens/login_page.dart';
+import '../screens/resetpassword_page.dart';
+import '../screens/tandcpage.dart';
 import '../screens/welcome_page.dart';
 
 class Routes{
@@ -32,6 +39,10 @@ class Routes{
   static final String chat = "/chat_screen";
   static final String postP = "/post_profile_page";
   static final String hire = "/hire_personnel_page";
+  static final String login = "/login_page";
+  static final String reg= "/registration_page";
+  static final String tandc= "/tandcpage";
+  static final String reset= "/resetpassword_page";
 
 
 
@@ -92,6 +103,24 @@ class Routes{
       name: Routes.hire,
       page: ()=> HirePersonnelPage(),
       binding:HirePersonnelBinding(),
+    ),
+    GetPage(
+      name: Routes.login,
+      page: ()=> LoginPage(),
+      binding:LoginBinding(),
+    ),
+    GetPage(
+      name: Routes.reg,
+      page: ()=> RegistrationPage(),
+      binding:RegistrationBinding(),
+    ),
+    GetPage(
+      name: Routes.tandc,
+      page: ()=> TandcPage(),
+    ),
+    GetPage(
+      name: Routes.reset,
+      page: ()=> ResetpasswordPage(),
     ),
   ];
 }

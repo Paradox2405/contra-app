@@ -7,7 +7,6 @@ class WelcomePageController extends GetxController {
 
   @override
   void onInit() {
-    redirect();
     print('>>> WController init');
     super.onInit();
   }
@@ -23,10 +22,5 @@ class WelcomePageController extends GetxController {
     print('>>> WController close');
     super.onClose();
   }
-  
-  redirect() async{
-    if (await FirebaseAuth.instance.currentUser?.uid != null) {
-     Get.toNamed(Routes.joblisting);
-    }
-  }
+
 }

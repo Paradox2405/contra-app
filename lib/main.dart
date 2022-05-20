@@ -1,4 +1,5 @@
 import 'package:contra/add_data.dart';
+import 'package:contra/controllers/login_bindings.dart';
 import 'package:contra/routes/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -45,9 +46,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.welcome,
+      initialRoute: Routes.login,
       getPages: Routes.routes,
-      initialBinding: WelcomeBinding(),
+      initialBinding: LoginBinding(),
     );
   }
 

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../controllers/constructor_info_controller.dart';
 import '../routes/routes.dart';
+import 'feedback_page.dart';
 
 class ConstructorInfoPage extends GetView<ConstructorInfoController> {
   @override
@@ -230,6 +231,30 @@ class ConstructorInfoPage extends GetView<ConstructorInfoController> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      ElevatedButton(
+                        onPressed: ()=>{  showDialog(
+                        context: context, builder:
+                        (context) => const FeedbackDialog())},
+                        style: ButtonStyle(
+                            backgroundColor:
+                            MaterialStateProperty.all(Colors.blueGrey)),
+                        child: Row(
+                          children: [
+                            Icon(Icons.feedback, color: Colors.white),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Feedback",
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       ElevatedButton(
                         onPressed: ()=>{Get.toNamed(Routes.chat),},
                         style: ButtonStyle(
